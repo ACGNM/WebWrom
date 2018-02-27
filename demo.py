@@ -9,7 +9,7 @@ def process(num,start,end):
     book = xlwt.Workbook(encoding='utf-8', style_compression=0)
     sheet = book.add_sheet('user_name', cell_overwrite_ok=True)
 
-    for num in range(start, end):
+    for num in range(start, end+1):
         request = urllib2.Request("https://gamewith.jp/user/profile/" + str(num))
         response = urllib2.urlopen(request)
 
@@ -33,7 +33,7 @@ def process(num,start,end):
 if __name__ == '__main__':
 
     a = 10000
-    b = 10024
+    b = 10499
     step = (b-a+1)/5
 
     for i in range(5):
